@@ -1,0 +1,26 @@
+# AI Video Assistant - Render deployment dependencies
+streamlit==1.50.0
+python-dotenv==1.1.1
+requests==2.32.5
+
+# YouTube + audio/video processing
+yt-dlp==2025.9.5
+pydub==0.25.1
+
+# LangChain + Mistral
+langchain==0.3.27
+langchain-core==0.3.76
+langchain-mistralai==0.2.12
+langchain-text-splitters==0.3.11
+
+# RAG / embeddings
+langchain-chroma==0.2.6
+langchain-huggingface==0.1.2
+chromadb==1.0.20
+sentence-transformers==5.1.0
+huggingface-hub==0.35.3
+
+# Required by the embedding stack
+--extra-index-url https://download.pytorch.org/whl/cpu
+# CPU-only PyTorch keeps the Render image much smaller than the default CUDA-enabled wheel.
+torch==2.8.0+cpu
